@@ -1,0 +1,330 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  position: relative;
+  background: rgb(8, 19, 65);
+  /* background: linear-gradient(
+    180deg,
+    rgba(8, 19, 65, 1) 35%,
+    rgba(21, 37, 48, 1) 72%,
+    rgba(5, 0, 1, 1) 100%
+  ); */
+  background: linear-gradient(
+    180deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(35, 36, 41, 1) 0%,
+    rgba(5, 0, 1, 1) 100%
+  );
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.blackBackGround {
+  background: rgb(8, 31, 8);
+}
+.startbtn,
+.gameCountDown,
+.showScore {
+  position: absolute;
+  color: wheat;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  bottom: 50%;
+  padding: 2rem 3rem;
+  background: black;
+  font-size: 3rem;
+  cursor: pointer;
+  border-radius: 7px;
+}
+.gameCountDown {
+  background: none;
+  padding: 0px;
+  display: none;
+}
+#one {
+  opacity: 0;
+  animation: countDown 1.2s 0.1s 1;
+}
+#two {
+  opacity: 0;
+  margin-left: -1.8rem;
+  animation: countDown 1.2s 1.2s 1;
+}
+
+#three {
+  opacity: 0;
+  margin-left: -2.8rem;
+  animation: countDown 1.2s 2.2s 1;
+}
+/* countDown Animation */
+@keyframes countDown {
+  0% {
+    opacity: 0.5;
+    font-size: 2rem;
+  }
+  50% {
+    opacity: 1;
+    font-size: 15rem;
+  }
+  100% {
+    opacity: 0;
+    font-size: 2rem;
+  }
+}
+.gameroad {
+  position: relative;
+  width: 500px;
+  background-color: rgb(22, 25, 34);
+  left: 35%;
+  display: none;
+  overflow: hidden;
+  height: 100%;
+}
+.hide {
+  display: none;
+}
+.lines {
+  width: 10px;
+  height: 96px;
+  background-color: white;
+  position: absolute;
+  left: 47%;
+}
+.car {
+  width: 61px;
+  height: 97px;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  text-align: center;
+  z-index: 1;
+  border-radius: 14px;
+}
+.car img {
+  width: 177%;
+  height: 100%;
+  margin-left: -22px;
+}
+.enemyCars {
+  padding: -5px;
+  width: 53px;
+  height: 105px;
+  position: absolute;
+  bottom: 0%;
+  left: 23%;
+  text-align: center;
+  z-index: 1;
+  border-radius: 14px;
+}
+.enemyCars img {
+  margin-left: -21px;
+  width: 180%;
+  height: 100%;
+}
+
+/* score */
+.scoreContainer,
+.highScore {
+  border: 2px solid wheat;
+  position: absolute;
+  bottom: 73%;
+  font-size: 2rem;
+  color: wheat;
+  padding: 0.6rem;
+  display: none;
+}
+.highScore {
+  bottom: 63%;
+}
+
+/* show score div */
+.showScore {
+  z-index: 3;
+  display: none;
+}
+
+.trees,
+.treesRight,
+.homeDiv,
+.righthomeDiv {
+  display: none;
+  top: 0px;
+  position: absolute;
+  width: 149px;
+  height: 112px;
+  left: 23%;
+  transform: skewZ(6deg);
+  transform: translate3d(13px, 11px, -16px);
+  overflow: hidden;
+}
+.homeDiv {
+  left: 5%;
+  width: 149px;
+  height: 112px;
+}
+.righthomeDiv {
+  left: 86%;
+  bottom: 20%;
+}
+.treesRight {
+  left: 68%;
+}
+.trees img,
+.treesRight img,
+.homeDiv img,
+.righthomeDiv img {
+  width: 100%;
+  height: 100%;
+}
+.fire {
+  position: absolute;
+  left: 6%;
+  bottom: 27%;
+  width: 48px;
+  border-radius: 11%;
+  height: 72px;
+  animation: flameUp 3s ease-in infinite;
+  display: none;
+}
+/* fire animation */
+@keyframes flameUp {
+  0% {
+    transform: translateX(0.5px);
+  }
+  20% {
+    transform: translateX(-1px);
+  }
+  30% {
+    transform: translateX(0.2px);
+  }
+}
+
+/* mediaQueries */
+@media All and (min-height: 1080px) {
+  .startbtn {
+    font-size: 5rem;
+  }
+  .showScore {
+    font-size: 6rem;
+  }
+  .gameroad {
+    width: 682px;
+  }
+  .enemyCars {
+    width: 72px;
+    height: 152px;
+  }
+  .enemyCars img {
+    margin-left: -25px;
+    width: 163%;
+    height: 100%;
+  }
+  .car {
+    width: 61px;
+    height: 126px;
+    left: 8%;
+  }
+  .car img {
+    margin-left: -25px;
+    width: 163%;
+    height: 100%;
+  }
+  .trees,
+  .treesRight,
+  .homeDiv,
+  .righthomeDiv {
+    width: 300px;
+    height: 221px;
+    left: 21%;
+    transform: skewZ(6deg);
+    transform: translate3d(13px, 11px, -16px);
+    overflow: hidden;
+  }
+  .homeDiv {
+    left: 5%;
+  }
+  .righthomeDiv {
+    left: 82%;
+    bottom: 20%;
+  }
+  .treesRight {
+    left: 74%;
+  }
+  .trees img,
+  .treesRight img,
+  .homeDiv img,
+  .righthomeDiv img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media All and (min-height: 1440px) {
+  .startbtn {
+    padding: 4rem 5rem;
+    font-size: 5rem;
+  }
+  .showScore {
+    font-size: 8rem;
+  }
+  .scoreContainer,
+  .highScore {
+    font-size: 6rem;
+  }
+  .gameroad {
+    width: 982px;
+  }
+  .enemyCars {
+    width: 109px;
+    height: 200px;
+  }
+  .enemyCars img {
+    margin-left: -25px;
+    width: 163%;
+    height: 100%;
+  }
+  .car {
+    width: 136px;
+    height: 200px;
+    left: 8%;
+  }
+  .car img {
+    margin-left: -25px;
+    width: 163%;
+    height: 100%;
+  }
+  .trees,
+  .treesRight,
+  .homeDiv,
+  .righthomeDiv {
+    width: 425px;
+    height: 323px;
+    left: 21%;
+    transform: skewZ(6deg);
+    transform: translate3d(13px, 11px, -16px);
+    overflow: hidden;
+  }
+  .homeDiv {
+    left: 5%;
+  }
+  .righthomeDiv {
+    left: 80%;
+    bottom: 20%;
+  }
+  .treesRight {
+    left: 64%;
+  }
+  .trees img,
+  .treesRight img,
+  .homeDiv img,
+  .righthomeDiv img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.show {
+  display: block;
+}
