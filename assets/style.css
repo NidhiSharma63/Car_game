@@ -5,12 +5,6 @@
 .container {
   position: relative;
   background: rgb(8, 19, 65);
-  /* background: linear-gradient(
-    180deg,
-    rgba(8, 19, 65, 1) 35%,
-    rgba(21, 37, 48, 1) 72%,
-    rgba(5, 0, 1, 1) 100%
-  ); */
   background: linear-gradient(
     180deg,
     rgba(63, 94, 251, 1) 0%,
@@ -24,20 +18,30 @@
 .blackBackGround {
   background: rgb(8, 31, 8);
 }
+
 .startbtn,
 .gameCountDown,
 .showScore {
   position: absolute;
-  color: wheat;
   z-index: 1;
   left: 50%;
   transform: translate(-50%, 0px);
   bottom: 50%;
   padding: 2rem 3rem;
   background: black;
-  font-size: 3rem;
+  font-size: 2rem;
   cursor: pointer;
   border-radius: 7px;
+  gap: 16px;
+  color: whitesmoke;
+}
+
+.startbtn,
+.showScore{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 .gameCountDown {
   background: none;
